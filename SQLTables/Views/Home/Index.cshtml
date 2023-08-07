@@ -1,0 +1,25 @@
+﻿@model IEnumerable<Book>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<h2>Таблица</h2>
+<table class="Main-table">
+        <tr>
+            <th>Название книги</th>
+             <th>Автор</th>
+             <th>Жанр</th>
+             <th>Цена</th>
+             <th>Количество</th>
+    </tr>
+    @foreach(var book in Model)
+    {
+        <tr>
+            <td>@book.Title</td>
+            <td>@book.Author?.Name</td>
+            <td>@book.Genre?.Name</td>
+            <td>@book.Price</td>
+            <td>@book.Amount</td>
+        </tr>
+    } 
+    </table>
